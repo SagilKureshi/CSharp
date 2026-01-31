@@ -8,8 +8,9 @@ class Check_Number{
 		if(SK_Num > 0)
 			Console.WriteLine("The Number is Positive");
 		else if(SK_Num < 0)
-			Console.WriteLine("The Number is Nagative");
+			Console.WriteLine("The Number is Negative");
 		else
 			Console.WriteLine("The Number is Zero");
 	}
 }
+
