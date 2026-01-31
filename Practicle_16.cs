@@ -1,32 +1,57 @@
 using System;
-class Full_Dynamic_Jagged_Array{
-	static void Main(){
-		Console.Write("Enter the size of 2D Jagged Array's Rows: ");
-		int r = int.Parse(Console.ReadLine());
-		int[][] SK = new int[r][];
-		Console.WriteLine("\nEnter the size of Columns for each Rows :- \n");
-		//Loop for get all Row's Columns size from the User
-		for(int s=0;s<SK.Length;s++){
-			Console.Write("SK["+s+"] row = ");
-			SK[s] = new int[int.Parse(Console.ReadLine())];
-		}
-		Console.WriteLine();	
-		//Loop for get all Elements from the User
-		for(int s=0;s<SK.Length;s++){
-			for(int k=0;k<SK[s].Length;k++){
-				Console.Write("SK ["+s+"]["+k+"] : ");
-				SK[s][k] = int.Parse(Console.ReadLine());
-			}
-			Console.WriteLine();
-		}
-		
-		//Loop for Print all Elements
-		for(int s=0;s<SK.Length;s++){
-			for(int k=0;k<SK[s].Length;k++){
-				Console.Write("SK ["+s+"]["+k+"] = "+SK[s][k]+"  ");
-			}
-			Console.WriteLine();
-		}
-		Console.WriteLine();
-	}
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int cols = int.Parse(Console.ReadLine());
+
+        int[,] arr = new int[rows, cols];
+
+        Console.WriteLine("\nEnter array elements:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write("Element [{0},{1}]: ",i,j);
+                arr[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("\nDuplicate elements and their counts:");
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                int count = 1;
+
+                if (arr[i, j] == -1)   // already counted
+                    continue;
+
+                for (int x = i; x < rows; x++)
+                {
+                    for (int y = 0; y < cols; y++)
+                    {
+                        if (x == i && y <= j)
+                            continue;
+
+                        if (arr[i, j] == arr[x, y])
+                        {
+                            count++;
+                            arr[x, y] = -1; // mark as counted
+                        }
+                    }
+                }
+
+                if (count > 1)	
+                    Console.WriteLine("Element {0} appears {1} times",arr[i,j],count);
+            }
+        }
+    }
 }
+
