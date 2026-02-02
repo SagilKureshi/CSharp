@@ -1,62 +1,172 @@
 using System;
-class Menu{
-	static int rolex_quant = 0;
-	static int rolex = 32411568;
-	static int patek = 272;
-	static int patek_quant = 0; 
-	static int Omega = 277664000;
-	static int omega_quant = 0;
-	static int Titan = 4000000;
-	static int titan_quant = 0;
-	static int casio = 49995;
-	static int casio_quant = 0;
+class SK_Watches_Menu{
+	static int Rolex_quant = 0;
+	static int Rolex_price = 32411568;
+	static long Patek_price = 2600000000;
+	static int Patek_quant = 0; 
+	static int Omega_price = 277664000;
+	static int Omega_quant = 0;
+	static int Titan_price = 4000000;
+	static int Titan_quant = 0;
+	static int Casio_price = 49995;
+	static int Casio_quant = 0;
+	static long Total =0;
+	static char ny;
 		
-	static void Rolex(){
-		Console.WriteLine("Welcome to Rolex Watches :-");
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)");
-		Console.WriteLine("{0}\t\tRolex Daytona Paul Newman 6239\t\t\t32,411,568($17.75 million)",rolex_quant);	
-	}		
+	static void Total_bill(long s){
+		Console.WriteLine("|---------------------------------");
+		Console.WriteLine("|Total Amount:-\t\t|  "+Total);
+		Console.WriteLine("|---------------------------------");
+	}
+	
+	static void Rolex_fun(){
+		Rolex_quant++;
+		Console.WriteLine("----------------------------------------------------------------------------------------------");
+		Console.WriteLine("\t\t\tWelcome to SK Rolex Watches :-                                                          \n");	
+		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)                                                         \n");
+		Console.WriteLine("{0}\t\tRolex Daytona Paul Newman 6239\t\t\t32,411,568($17.75 million)",Rolex_quant);	
+		Console.Write("\nDo you want to Purchase [y/n] : ");
+		int buy = char.Parse(Console.ReadLine());
+		if(buy == 'y' || buy == 'Y'){
+
+			Total += Rolex_price;
+			Total_bill(Rolex_price);
+		}else{
+			Console.WriteLine("Thank for visit");
+		}
+	}	
+	
+	static void Patek_fun(){
+		Patek_quant++;
+		Console.WriteLine("----------------------------------------------------------------------------------------------");		
+		Console.WriteLine("\t\t\tWelcome to SK Patek_Philippe Watches :- \n");
+		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
+		Console.WriteLine("{0}\t\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t\t\t260 crore",Patek_quant);	
+		Console.Write("\nDo you want to Purchase [y/n] : ");
+		int buy = char.Parse(Console.ReadLine());
+		if(buy == 'y' || buy == 'Y'){
+			Total +=  Patek_price;
+		 	Total_bill(Patek_price);	
+		}else{
+			Console.WriteLine("Thanks for visit");	
+		}
+	}
+	
+	static void Omega_fun(){
+		Omega_quant++;
+		Console.WriteLine("----------------------------------------------------------------------------------------------");
+		Console.WriteLine("\t\t\tWelcome to SK Omega Watches :-\n");
+		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
+		Console.WriteLine("{0}\t\tOmega vintage Speedmaster Ref. 2915-1\t\t\t\t\t27,76,64,000($17.75 million)",Omega_quant);	
+		Console.Write("\nDo you want to Purchase [y/n] : ");
+		int buy = char.Parse(Console.ReadLine());
+		if(buy == 'y' || buy == 'Y'){
+			Total +=Omega_price;
+			Total_bill(Omega_price);
+		}
+		else{
+			Console.WriteLine("Thanks for Visit \n");
+		}
+	
+	}
+	
+	static void Titan_fun(){
+		Titan_quant++;
+		Console.WriteLine("----------------------------------------------------------------------------------------------");
+		Console.WriteLine("\t\t\tWelcome to SK Titan Watches :-\n");
+		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
+		Console.WriteLine("{0}\t\t Titan Nebula Jalsa\t\t\t\t\t4000000 (4.05 million INR)",Titan_quant);
+		Console.Write("\nDo you want to Purchase [y/n] : ");
+		int buy = char.Parse(Console.ReadLine());
+		if(buy == 'y' || buy == 'Y'){
+
+			Total += Titan_price;
+			Total_bill(Titan_price);
+		}
+	}
+	
+	static void Casio_fun(){
+		Casio_quant++;
+		Console.WriteLine("----------------------------------------------------------------------------------------------");																																											
+		Console.WriteLine("\t\t\tWelcome to SK Casio Watches :-\n");
+		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
+		Console.WriteLine("{0}\t\tCASIO G-SHOCK Men Watch\t\t\t\t\t49995",Casio_quant);	
+		Console.Write("\nDo you want to Purchase [y/n] : ");
+		int buy = char.Parse(Console.ReadLine());
+		if(buy == 'y' || buy == 'Y'){
+
+			Total += Casio_price;
+			Total_bill(Casio_price);
+		}
+	}
+			
 	static void Main(){
-	char yn;
+		char yn;
 			
 		do{
-			Console.WriteLine("Menu for Watches :-\n");
+			Console.WriteLine("***** Most Welcome To The Luxury SK Watches :- *****\n");
+			Console.WriteLine("********* SK Watches Menu :- *********\n");			
 			Console.WriteLine("Press [1] for Rolex Watches");
 			Console.WriteLine("Press [2] for Patek Philippe Watches");
 			Console.WriteLine("Press [3] for Omega Watches");
 			Console.WriteLine("Press [4] for Titan Watches");
-			Console.WriteLine("Press [5] for Casio Watches\n");
+			Console.WriteLine("Press [5] for Casio Watches");
+			Console.WriteLine("Press [0] for out to the watch shope\n");
 				
 			Console.Write("Your Choice : ");
 			int choice = int.Parse(Console.ReadLine());
 				
 			switch(choice){
 				case 1:
-					Rolex();
+					Rolex_fun();
+					Console.Write("\nDo you want to add more quantity [y/n] : ");
+					ny = char.Parse(Console.ReadLine());
+					if(ny == 'y' || ny == 'Y')
+						Rolex_fun();
 					break;
+					
 				case 2:
-
-						
+					Patek_fun();
+					Console.Write("\nDo you want to add more quantity [y/n] : ");
+					ny = char.Parse(Console.ReadLine());
+					if(ny == 'y' || ny == 'Y')
+						Patek_fun();	
 					break;
+					
 				case 3:
-						
-					Console.WriteLine("Welcome to Omega Watches :-");
-						Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)");
-						Console.WriteLine("{0}\t\tOmega vintage Speedmaster Ref. 2915-1\t\t\t\t\t₹27,76,64,000($17.75 million)",omega_quant);
+					Omega_fun();
+					Console.Write("\nDo you want to add more quantity [y/n] : ");
+					ny = char.Parse(Console.ReadLine());
+					if(ny == 'y' || ny == 'Y')
+						Omega_fun();
 					break;
+					
 				case 4:
-						Console.WriteLine("Welcome to Titan Watches :-");
-					Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)");
-					Console.WriteLine("{0}\t\t Titan Nebula Jalsa\t\t\t\t\t₹4000000 (4.05 million INR)",titan_quant);
-						break;	
+					Titan_fun();
+					Console.Write("\nDo you want to add more quantity [y/n] : ");
+					ny = char.Parse(Console.ReadLine());
+					if(ny == 'y' || ny == 'Y')
+						Titan_fun();
+					break;
+					
 				case 5:
-					Console.WriteLine("Welcome to Casio Watches :-");
-					Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)");
-					Console.WriteLine("{0}\t\tCASIO G-SHOCK Men Watch\t\t\t\t\t₹49995",casio_quant);
+					Casio_fun();	
+					Console.Write("\nDo you want to add more quantity [y/n] : ");
+					ny = char.Parse(Console.ReadLine());
+					if(ny == 'y' || ny == 'Y')
+						Casio_fun();
+					break;
+					
+				case 0:
+					Console.WriteLine("Thanks to visit ");
+					break;
+					
+				default:
+					Console.WriteLine("Please Select Your Option Related Above Menu");
 					break;
 			}
 			Console.Write("Do you want to Continue Press [y/n] : ");
 			yn = char.Parse(Console.ReadLine());
-		}while(yn == 'y');
-		}
+		}while(yn == 'y' ||yn == 'Y');
+	}
 }
