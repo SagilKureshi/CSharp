@@ -12,6 +12,7 @@ class SK_Watches_Menu{
 	static int Casio_quant = 0;
 	static long Total =0;
 	static char ny;
+	static char buy;
 		
 	static void Total_bill(long s){
 		Console.WriteLine("|---------------------------------");
@@ -26,7 +27,7 @@ class SK_Watches_Menu{
 		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)                                                         \n");
 		Console.WriteLine("{0}\t\tRolex Daytona Paul Newman 6239\t\t\t32,411,568($17.75 million)",Rolex_quant);	
 		Console.Write("\nDo you want to Purchase [y/n] : ");
-		int buy = char.Parse(Console.ReadLine());
+	    buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 
 			Total += Rolex_price;
@@ -43,7 +44,7 @@ class SK_Watches_Menu{
 		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
 		Console.WriteLine("{0}\t\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t\t\t260 crore",Patek_quant);	
 		Console.Write("\nDo you want to Purchase [y/n] : ");
-		int buy = char.Parse(Console.ReadLine());
+		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 			Total +=  Patek_price;
 		 	Total_bill(Patek_price);	
@@ -59,12 +60,11 @@ class SK_Watches_Menu{
 		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
 		Console.WriteLine("{0}\t\tOmega vintage Speedmaster Ref. 2915-1\t\t\t\t\t27,76,64,000($17.75 million)",Omega_quant);	
 		Console.Write("\nDo you want to Purchase [y/n] : ");
-		int buy = char.Parse(Console.ReadLine());
+		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 			Total +=Omega_price;
 			Total_bill(Omega_price);
-		}
-		else{
+		}else{
 			Console.WriteLine("Thanks for Visit \n");
 		}
 	
@@ -77,12 +77,15 @@ class SK_Watches_Menu{
 		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
 		Console.WriteLine("{0}\t\t Titan Nebula Jalsa\t\t\t\t\t4000000 (4.05 million INR)",Titan_quant);
 		Console.Write("\nDo you want to Purchase [y/n] : ");
-		int buy = char.Parse(Console.ReadLine());
+		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 
 			Total += Titan_price;
 			Total_bill(Titan_price);
+		}else{
+			Console.WriteLine("Thanks for Visit \n");
 		}
+		
 	}
 	
 	static void Casio_fun(){
@@ -92,12 +95,15 @@ class SK_Watches_Menu{
 		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
 		Console.WriteLine("{0}\t\tCASIO G-SHOCK Men Watch\t\t\t\t\t49995",Casio_quant);	
 		Console.Write("\nDo you want to Purchase [y/n] : ");
-		int buy = char.Parse(Console.ReadLine());
+		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 
 			Total += Casio_price;
 			Total_bill(Casio_price);
+		}else{
+			Console.WriteLine("Thanks for Visit \n");
 		}
+		
 	}
 			
 	static void Main(){
@@ -119,47 +125,57 @@ class SK_Watches_Menu{
 			switch(choice){
 				case 1:
 					Rolex_fun();
-					Console.Write("\nDo you want to add more quantity [y/n] : ");
-					ny = char.Parse(Console.ReadLine());
+					if(buy == 'y' || buy == 'Y'){
+						Console.Write("\nDo you want to add more quantity [y/n] : ");
+						ny = char.Parse(Console.ReadLine());
+					}
 					if(ny == 'y' || ny == 'Y')
 						Rolex_fun();
 					break;
 					
 				case 2:
 					Patek_fun();
-					Console.Write("\nDo you want to add more quantity [y/n] : ");
-					ny = char.Parse(Console.ReadLine());
+					if(buy == 'y' || buy == 'Y'){
+						Console.Write("\nDo you want to add more quantity [y/n] : ");
+						ny = char.Parse(Console.ReadLine());
+					}
 					if(ny == 'y' || ny == 'Y')
 						Patek_fun();	
 					break;
 					
 				case 3:
 					Omega_fun();
-					Console.Write("\nDo you want to add more quantity [y/n] : ");
-					ny = char.Parse(Console.ReadLine());
+					if(buy == 'y' || buy == 'Y'){
+						Console.Write("\nDo you want to add more quantity [y/n] : ");
+						ny = char.Parse(Console.ReadLine());
+					}
 					if(ny == 'y' || ny == 'Y')
 						Omega_fun();
 					break;
 					
 				case 4:
 					Titan_fun();
-					Console.Write("\nDo you want to add more quantity [y/n] : ");
-					ny = char.Parse(Console.ReadLine());
+					if(buy == 'y' || buy == 'Y'){
+						Console.Write("\nDo you want to add more quantity [y/n] : ");
+						ny = char.Parse(Console.ReadLine());
+					}
 					if(ny == 'y' || ny == 'Y')
 						Titan_fun();
 					break;
 					
 				case 5:
-					Casio_fun();	
-					Console.Write("\nDo you want to add more quantity [y/n] : ");
-					ny = char.Parse(Console.ReadLine());
+					Casio_fun();
+					if(buy == 'y' || buy == 'Y'){
+						Console.Write("\nDo you want to add more quantity [y/n] : ");
+						ny = char.Parse(Console.ReadLine());
+					}
 					if(ny == 'y' || ny == 'Y')
 						Casio_fun();
 					break;
 					
 				case 0:
 					Console.WriteLine("Thanks to visit ");
-					break;
+								break;
 					
 				default:
 					Console.WriteLine("Please Select Your Option Related Above Menu");
@@ -168,5 +184,6 @@ class SK_Watches_Menu{
 			Console.Write("Do you want to Continue Press [y/n] : ");
 			yn = char.Parse(Console.ReadLine());
 		}while(yn == 'y' ||yn == 'Y');
+		Console.WriteLine();
 	}
 }
