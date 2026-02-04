@@ -22,10 +22,13 @@ class SK_Watches_Menu{
 	
 	static void Rolex_fun(){
 		Rolex_quant++;
-		Console.WriteLine("----------------------------------------------------------------------------------------------");
-		Console.WriteLine("\t\t\tWelcome to SK Rolex Watches :-                                                          \n");	
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)                                                         \n");
-		Console.WriteLine("{0}\t\tRolex Daytona Paul Newman 6239\t\t\t32,411,568($17.75 million)",Rolex_quant);	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|\t\t\t\tWelcome to SK Rolex Watches :-                                 |");	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|Quantity\t\t|\t\tModel\t            |\t\tPrice(INR)             |");
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|{0}   Rolex Daytona Paul Newman 6239  |\t32,411,568($17.75 million)     |",Rolex_quant+"\t\t\t|");	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 	    buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
@@ -39,10 +42,13 @@ class SK_Watches_Menu{
 	
 	static void Patek_fun(){
 		Patek_quant++;
-		Console.WriteLine("----------------------------------------------------------------------------------------------");		
-		Console.WriteLine("\t\t\tWelcome to SK Patek_Philippe Watches :- \n");
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
-		Console.WriteLine("{0}\t\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t\t\t260 crore",Patek_quant);	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
+		Console.WriteLine("|\t\t\t   Welcome to SK Patek_Philippe Watches :- \t\t\t       |");
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
+		Console.WriteLine("|quantity   |\t\t\t   Model\t\t\t\t|\tPrice(INR)     |");
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
+		Console.WriteLine("|{0}\t    |\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t|\t260 crore      |",Patek_quant);	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
