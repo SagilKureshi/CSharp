@@ -25,9 +25,9 @@ class SK_Watches_Menu{
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
 		Console.WriteLine("|\t\t\t\tWelcome to SK Rolex Watches :-                                 |");	
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-		Console.WriteLine("|Quantity\t\t|\t\tModel\t            |\t\tPrice(INR)             |");
+		Console.WriteLine("|   Quantity\t\t\t|\t\tModel\t         |\t   Price(INR)\t       |");
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-		Console.WriteLine("|{0}   Rolex Daytona Paul Newman 6239  |\t32,411,568($17.75 million)     |",Rolex_quant+"\t\t\t|");	
+		Console.WriteLine("|      {0} Rolex Daytona Paul Newman 6239 |  32,411,568($17.75 million) |",Rolex_quant+"\t\t\t|");	
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 	    buy = char.Parse(Console.ReadLine());
@@ -36,6 +36,7 @@ class SK_Watches_Menu{
 			Total += Rolex_price;
 			Total_bill(Rolex_price);
 		}else{
+			Rolex_quant--;
 			Console.WriteLine("Thank for visit");
 		}
 	}	
@@ -45,7 +46,7 @@ class SK_Watches_Menu{
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
 		Console.WriteLine("|\t\t\t   Welcome to SK Patek_Philippe Watches :- \t\t\t       |");
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
-		Console.WriteLine("|quantity   |\t\t\t   Model\t\t\t\t|\tPrice(INR)     |");
+		Console.WriteLine("|Quantity   |\t\t\t   Model\t\t\t\t|\tPrice(INR)     |");
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
 		Console.WriteLine("|{0}\t    |\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t|\t260 crore      |",Patek_quant);	
 		Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
@@ -55,22 +56,27 @@ class SK_Watches_Menu{
 			Total +=  Patek_price;
 		 	Total_bill(Patek_price);	
 		}else{
+			Patek_quant--;
 			Console.WriteLine("Thanks for visit");	
 		}
 	}
 	
 	static void Omega_fun(){
 		Omega_quant++;
-		Console.WriteLine("----------------------------------------------------------------------------------------------");
-		Console.WriteLine("\t\t\tWelcome to SK Omega Watches :-\n");
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
-		Console.WriteLine("{0}\t\tOmega vintage Speedmaster Ref. 2915-1\t\t\t\t\t27,76,64,000($17.75 million)",Omega_quant);	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|\t\t\t\tWelcome to SK Omega Watches :-\t\t\t\t\t\t   |");
+		Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|Quantity   |\t\t\t     Model\t\t\t   |\t\t  Price(INR)\t\t   |");
+		Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
+		Console.WriteLine("|{0}\t    |\t     	Omega vintage Speedmaster Ref. 2915-1\t   |\t  27,76,64,000($17.75 million)\t   |",Omega_quant);	
+		Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
 			Total +=Omega_price;
 			Total_bill(Omega_price);
 		}else{
+			Omega_quant--;
 			Console.WriteLine("Thanks for Visit \n");
 		}
 	
@@ -78,10 +84,13 @@ class SK_Watches_Menu{
 	
 	static void Titan_fun(){
 		Titan_quant++;
-		Console.WriteLine("----------------------------------------------------------------------------------------------");
-		Console.WriteLine("\t\t\tWelcome to SK Titan Watches :-\n");
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
-		Console.WriteLine("{0}\t\t Titan Nebula Jalsa\t\t\t\t\t4000000 (4.05 million INR)",Titan_quant);
+		Console.WriteLine("|-------------------------------------------------------------------------------------|");
+		Console.WriteLine("|\t\t\tWelcome to SK Titan Watches :-\t\t\t\t      |");
+		Console.WriteLine("|-------------------------------------------------------------------------------------|");
+		Console.WriteLine("| Quantity |\t\tModel\t\t|\t\tPrice(INR)\t\t      |");
+		Console.WriteLine("|-------------------------------------------------------------------------------------|");
+		Console.WriteLine("|    {0}\t   |\t Titan Nebula Jalsa\t|\t4000000 (4.05 million INR)\t      |",Titan_quant);
+		Console.WriteLine("|-------------------------------------------------------------------------------------|");
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
@@ -89,6 +98,7 @@ class SK_Watches_Menu{
 			Total += Titan_price;
 			Total_bill(Titan_price);
 		}else{
+			Titan_quant--;
 			Console.WriteLine("Thanks for Visit \n");
 		}
 		
@@ -96,10 +106,13 @@ class SK_Watches_Menu{
 	
 	static void Casio_fun(){
 		Casio_quant++;
-		Console.WriteLine("----------------------------------------------------------------------------------------------");																																											
-		Console.WriteLine("\t\t\tWelcome to SK Casio Watches :-\n");
-		Console.WriteLine("Quantity\t\tModel\t\t\t\t\tPrice(INR)\n");
-		Console.WriteLine("{0}\t\tCASIO G-SHOCK Men Watch\t\t\t\t\t49995",Casio_quant);	
+		Console.WriteLine("|------------------------------------------------------------------------------------|");
+		Console.WriteLine("|\t\t\tWelcome to SK Casio Watches :-\t\t\t\t     |");
+		Console.WriteLine("|------------------------------------------------------------------------------------|");
+		Console.WriteLine("| Quantity\t|\t\tModel\t    	   |\t\tPrice(INR)\t     |");
+		Console.WriteLine("|------------------------------------------------------------------------------------|");
+		Console.WriteLine("|    {0}\t\t|\tCASIO G-SHOCK Men Watc     |\t\t49995\t\t     |",Casio_quant);	
+		Console.WriteLine("|------------------------------------------------------------------------------------|");
 		Console.Write("\nDo you want to Purchase [y/n] : ");
 		buy = char.Parse(Console.ReadLine());
 		if(buy == 'y' || buy == 'Y'){
@@ -107,6 +120,7 @@ class SK_Watches_Menu{
 			Total += Casio_price;
 			Total_bill(Casio_price);
 		}else{
+			Casio_quant--;
 			Console.WriteLine("Thanks for Visit \n");
 		}
 		
@@ -189,6 +203,7 @@ class SK_Watches_Menu{
 			}
 			Console.Write("Do you want to Continue Press [y/n] : ");
 			yn = char.Parse(Console.ReadLine());
+			Console.Clear();
 		}while(yn == 'y' ||yn == 'Y');
 		Console.WriteLine();
 	}
