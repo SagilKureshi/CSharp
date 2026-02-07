@@ -1,37 +1,24 @@
 using System;
-class Full_Dynamic_3D_Array{
+class Jagged_2D_Array{
 	static void Main(){
-		Console.Write("Enter The Number of Dimension/Table of 3D Array :- ");
-		int t = int.Parse(Console.ReadLine());
-		Console.Write("Enter The Number of Rows of 3D Array :- ");
-		int r = int.Parse(Console.ReadLine());
-		Console.Write("Enter The Number of Columns of 3D Array :- ");
-		int c = int.Parse(Console.ReadLine());
+		int [][] SK = new int[4][];
+		SK[0] = new int[2];
+		SK[1] = new int[3];
+		SK[2] = new int[4];
 		
-		int[,,] SK = new int[t,r,c];
+		SK[0][0] = 1;
+		SK[0][1] = 2;
+		SK[1][0] = 3;
+		SK[1][1] = 4;
+		SK[1][2] = 5;
+		SK[2][0] = 6;
+		SK[2][1] = 7;
+		SK[2][2] = 8;
+		SK[2][3] = 9;
 		
-		Console.WriteLine("\nEnter The Elements(Values) of 3D Array :- \n");
-		for(int s=0;s<t;s++){
-			for(int k=0;k<r;k++){
-				for(int z=0;z<c;z++){
-					Console.Write("SK["+s+","+k+","+z+"] : ");
-					SK[s,k,z] = int.Parse(Console.ReadLine());
-				}
-				Console.WriteLine();
-			}
-			Console.WriteLine();
-		}		
-		
-		Console.WriteLine("Print The Elements(Values) of 3D Array :- \n");
-		for(int s=0;s<t;s++){
-			for(int k=0;k<r;k++){
-				for(int z=0;z<c;z++){
-				Console.Write("SK["+s+","+k+","+z+"] : "+SK[s,k,z]+"  ");
-				}
-				Console.WriteLine();
-			}
-			Console.WriteLine();
-		}
+		foreach(int[] s in SK){
+			foreach(int k in s)
+				Console.WriteLine(k+" ");
+		}Console.WriteLine();
 	}
-
 }
