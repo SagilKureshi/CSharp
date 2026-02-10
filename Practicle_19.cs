@@ -1,8 +1,13 @@
 	using System;
 	class SK_Watches_Menu{
-		static int Rolex_quant = 0;
+		static string Rolex_Name = "Rolex Daytona Paul Newman 6239";
+		static string Omega_Name = "Omega vintage Speedmaster Ref. 2915-1";
+		static string Patek_Name = "Patek Philippe Grandmaster Chime Ref. 6300A-010	";
+		static string Titan_Name = "Titan Nebula Jalsa\t|\t4000000 (4.05 million INR)";
+		static string Casio_Name = "CASIO G-SHOCK Men Watc";
 		static int Rolex_price = 32411568;
 		static long Patek_price = 2600000000;
+		static int Rolex_quant = 0;
 		static int Patek_quant = 0; 
 		static int Omega_price = 277664000;
 		static int Omega_quant = 0;
@@ -14,9 +19,11 @@
 		static char ny;
 		static char buy;
 			
-		static void Total_bill(long s){
+		static void Total_bill(int quantity,string Name,long price){
 			Console.WriteLine("|---------------------------------");
-			Console.WriteLine("|Total Amount:-\t\t|  "+Total);
+			Console.WriteLine("NO.\tDescription\t\t\tPrice");
+			Console.WriteLine("{0}. {1} \t {2}",quantity,Name,price);
+			Console.WriteLine("\n\nTotal Amount:-\t\t\t  "+Total);
 			Console.WriteLine("|---------------------------------");
 		}
 		
@@ -34,7 +41,7 @@
 			if(buy == 'y' || buy == 'Y'){
 
 				Total += Rolex_price;
-				Total_bill(Rolex_price);
+				Total_bill(Rolex_quant,Rolex_Name,Rolex_price);
 			}else{
 				Rolex_quant--;
 				Console.WriteLine("Thank for visit");
@@ -54,7 +61,7 @@
 			buy = char.Parse(Console.ReadLine());
 			if(buy == 'y' || buy == 'Y'){
 				Total +=  Patek_price;
-				Total_bill(Patek_price);	
+				Total_bill(Patek_quant,Patek_Name,Patek_price);	
 			}else{
 				Patek_quant--;
 				Console.WriteLine("Thanks for visit");	
@@ -74,7 +81,7 @@
 			buy = char.Parse(Console.ReadLine());
 			if(buy == 'y' || buy == 'Y'){
 				Total +=Omega_price;
-				Total_bill(Omega_price);
+				Total_bill(Omega_quant,Omega_Name,Omega_price);
 			}else{
 				Omega_quant--;
 				Console.WriteLine("Thanks for Visit \n");
@@ -96,7 +103,7 @@
 			if(buy == 'y' || buy == 'Y'){
 
 				Total += Titan_price;
-				Total_bill(Titan_price);
+				Total_bill(Titan_quant,Titan_Name,Titan_price);
 			}else{
 				Titan_quant--;
 				Console.WriteLine("Thanks for Visit \n");
@@ -118,7 +125,7 @@
 			if(buy == 'y' || buy == 'Y'){
 
 				Total += Casio_price;
-				Total_bill(Casio_price);
+				Total_bill(Casio_quant,Casio_Name,Casio_price);
 			}else{
 				Casio_quant--;
 				Console.WriteLine("Thanks for Visit \n");
