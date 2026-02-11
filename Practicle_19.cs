@@ -26,7 +26,25 @@
 			Console.WriteLine("\n\nTotal Amount:-\t\t\t  "+Total);
 			Console.WriteLine("|---------------------------------");
 		}
-		
+		static void Watchs_fun(int quantity,string model,long price){
+			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+			Console.WriteLine("|\t\t\t\tWelcome to SK Watches :-                                 |");	
+			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+			Console.WriteLine("|   Quantity\t\t\t|\t\tModel\t         |\t   Price(INR)\t       |");
+			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+			Console.WriteLine("|      {0}{1} |  {2} |",quantity,model,price+"\t\t\t|");	
+			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
+			Console.Write("\nDo you want to Purchase [y/n] : ");
+			buy = char.Parse(Console.ReadLine());
+			if(buy == 'y' || buy == 'Y'){
+
+				Total += price;
+				Total_bill(Rolex_quant,Rolex_Name,Rolex_price);
+			}else{
+				Rolex_quant--;
+				Console.WriteLine("Thank for visit");
+			}
+		}	
 		static void Rolex_fun(){
 			Rolex_quant++;
 			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
