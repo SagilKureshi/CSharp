@@ -15,6 +15,11 @@ class FSK_Fast_Food{
 	static int total_panipuri_price;
 	static int total_sevpuri_price;
 	static int total_samosa_price;
+	static float TOTAL;
+	static float DISCOUNT;
+	static float GST;
+	static float FINAL;
+	static bool Pay_Bill = false;
 	
 	static void Food_Function(string name,int price){
 		Console.WriteLine("|----------------------------|");
@@ -88,6 +93,7 @@ class FSK_Fast_Food{
 			Console.WriteLine("|\t[3] Enter for Panipuri\t\t   |");
 			Console.WriteLine("|\t[4] Enter for Sevpuri\t\t   |");
 			Console.WriteLine("|\t[5] Enter for Samosa\t\t   |");
+			Console.WriteLine("|\t[11] Enter for Pay The Bill\t   |");
 			Console.WriteLine("|\t[0] Enter for  Exit\t\t   |");
 			Console.WriteLine("|------------------------------------------|\n");		
 			
@@ -120,6 +126,35 @@ class FSK_Fast_Food{
 					Food_Function("Samosa",Samosa);
 					break;
 					
+				case 11:
+					Pay_Bill = true;
+					TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
+					DISCOUNT = (TOTAL/10);
+					GST = (TOTAL*18)/100;
+					FINAL = (TOTAL-DISCOUNT+GST);	
+					Console.WriteLine("|-----------------------------------------------|");
+					Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|  Description\t|Quantity\t|Price\t|Total  |");
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|Pizza\t\t|{0}\t\t|{1}\t|{2}\t|",Pizza_quantity,Pizza,total_pizza_price);
+					Console.WriteLine("|Burger\t\t|{0}\t\t|{1}\t|{2}\t|",Burger_quantity,Burger,total_burger_price);
+					Console.WriteLine("|Panipuri\t|{0}\t\t|{1}\t|{2}\t|",Panipuri_quantity,Panipuri,total_panipuri_price);
+					Console.WriteLine("|Sevpuri\t|{0}\t\t|{1}\t|{2}\t|",Sevpuri_quantity,Sevpuri,total_sevpuri_price);
+					Console.WriteLine("|Samosa\t\t|{0}\t\t|{1}\t|{2}\t|",Samosa_quantity,Samosa,total_samosa_price);
+					TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|\t\t\t\t\t|  "+TOTAL+"\t|");	
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|\t10% Discount :-\t\t\t|- "+DISCOUNT+" |");	
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|\t18% GST :-\t\t\t|+ "+GST+"|");	
+					Console.WriteLine("|-----------------------------------------------|");	
+					Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|"+FINAL+" |");	
+					Console.WriteLine("|-----------------------------------------------|");		
+					break;
+					
+				
 				case 0:
 					Console.WriteLine("\n  Thanks For Visit");
 					break;
@@ -134,20 +169,31 @@ class FSK_Fast_Food{
 			Console.Clear();
 		}while(yn == 'y' || yn == 'Y');
 		
-		Console.WriteLine("|-----------------------------------------------|");
-		Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
-		Console.WriteLine("|-----------------------------------------------|");	
-		Console.WriteLine("|  Description\t|Quantity\t|Price\t|Total  |");
-		Console.WriteLine("|-----------------------------------------------|");	
-		Console.WriteLine("|Pizza\t\t|{0}\t\t|{1}\t|{2}\t|",Pizza_quantity,Pizza,total_pizza_price);
-		Console.WriteLine("|Burger\t\t|{0}\t\t|{1}\t|{2}\t|",Burger_quantity,Burger,total_burger_price);
-		Console.WriteLine("|Panipuri\t|{0}\t\t|{1}\t|{2}\t|",Panipuri_quantity,Panipuri,total_panipuri_price);
-		Console.WriteLine("|Sevpuri\t|{0}\t\t|{1}\t|{2}\t|",Sevpuri_quantity,Sevpuri,total_sevpuri_price);
-		Console.WriteLine("|Samosa\t\t|{0}\t\t|{1}\t|{2}\t|",Samosa_quantity,Samosa,total_samosa_price);
-		long TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
-		Console.WriteLine("|-----------------------------------------------|");	
-		Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|  "+TOTAL+"\t|");	
-		Console.WriteLine("|-----------------------------------------------|");	
-		Console.ReadLine();
+		if(Pay_Bill == false){
+			Console.WriteLine("|-----------------------------------------------|");
+			Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|  Description\t|Quantity\t|Price\t|Total  |");
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|Pizza\t\t|{0}\t\t|{1}\t|{2}\t|",Pizza_quantity,Pizza,total_pizza_price);
+			Console.WriteLine("|Burger\t\t|{0}\t\t|{1}\t|{2}\t|",Burger_quantity,Burger,total_burger_price);
+			Console.WriteLine("|Panipuri\t|{0}\t\t|{1}\t|{2}\t|",Panipuri_quantity,Panipuri,total_panipuri_price);
+			Console.WriteLine("|Sevpuri\t|{0}\t\t|{1}\t|{2}\t|",Sevpuri_quantity,Sevpuri,total_sevpuri_price);
+			Console.WriteLine("|Samosa\t\t|{0}\t\t|{1}\t|{2}\t|",Samosa_quantity,Samosa,total_samosa_price);
+			TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
+			DISCOUNT = (TOTAL/10);	
+			GST = (TOTAL*18)/100;
+			FINAL = (TOTAL-DISCOUNT+GST);
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|\t\t\t\t\t|  "+TOTAL+"\t|");	
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|\t10% Discount :-\t\t\t|- "+DISCOUNT+" |");	
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|\t18% GST :-\t\t\t|+ "+GST+"|");	
+			Console.WriteLine("|-----------------------------------------------|");	
+			Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|"+FINAL+" |");	
+			Console.WriteLine("|-----------------------------------------------|");	
+		}
+			Console.ReadLine();
 	}
 }
