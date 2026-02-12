@@ -1,235 +1,153 @@
-	using System;
-	class SK_Watches_Menu{
-		static string Rolex_Name = "Rolex Daytona Paul Newman 6239";
-		static string Omega_Name = "Omega vintage Speedmaster Ref. 2915-1";
-		static string Patek_Name = "Patek Philippe Grandmaster Chime Ref. 6300A-010	";
-		static string Titan_Name = "Titan Nebula Jalsa\t|\t4000000 (4.05 million INR)";
-		static string Casio_Name = "CASIO G-SHOCK Men Watc";
-		static int Rolex_price = 32411568;
-		static long Patek_price = 2600000000;
-		static int Rolex_quant = 0;
-		static int Patek_quant = 0; 
-		static int Omega_price = 277664000;
-		static int Omega_quant = 0;
-		static int Titan_price = 4000000;
-		static int Titan_quant = 0;
-		static int Casio_price = 49995;
-		static int Casio_quant = 0;
-		static long Total =0;
-		static char ny;
-		static char buy;
-			
-		static void Total_bill(int quantity,string Name,long price){
-			Console.WriteLine("|---------------------------------");
-			Console.WriteLine("NO.\tDescription\t\t\tPrice");
-			Console.WriteLine("{0}. {1} \t {2}",quantity,Name,price);
-			Console.WriteLine("\n\nTotal Amount:-\t\t\t  "+Total);
-			Console.WriteLine("|---------------------------------");
-		}
-		static void Watchs_fun(int quantity,string model,long price){
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|\t\t\t\tWelcome to SK Watches :-                                 |");	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|   Quantity\t\t\t|\t\tModel\t         |\t   Price(INR)\t       |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|      {0}{1} |  {2} |",quantity,model,price+"\t\t\t|");	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-
-				Total += price;
-				Total_bill(Rolex_quant,Rolex_Name,Rolex_price);
-			}else{
-				Rolex_quant--;
-				Console.WriteLine("Thank for visit");
-			}
-		}	
-		static void Rolex_fun(){
-			Rolex_quant++;
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|\t\t\t\tWelcome to SK Rolex Watches :-                                 |");	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|   Quantity\t\t\t|\t\tModel\t         |\t   Price(INR)\t       |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|      {0} Rolex Daytona Paul Newman 6239 |  32,411,568($17.75 million) |",Rolex_quant+"\t\t\t|");	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-
-				Total += Rolex_price;
-				Total_bill(Rolex_quant,Rolex_Name,Rolex_price);
-			}else{
-				Rolex_quant--;
-				Console.WriteLine("Thank for visit");
-			}
-		}	
+using System;
+class FSK_Fast_Food{
+	static int Pizza = 499;
+	static int Burger = 299;
+	static int Panipuri = 199;
+	static int Sevpuri = 209;
+	static int Samosa = 149;
+	static int Pizza_quantity;
+	static int Burger_quantity;
+	static int Panipuri_quantity;
+	static int Sevpuri_quantity;
+	static int Samosa_quantity;
+	static int total_pizza_price;
+	static int total_burger_price;
+	static int total_panipuri_price;
+	static int total_sevpuri_price;
+	static int total_samosa_price;
+	
+	static void Food_Function(string name,int price){
+		Console.WriteLine("|----------------------------|");
+		Console.WriteLine("|Description\t|\tPrice|");
+		Console.WriteLine("|----------------------------|");
+		Console.WriteLine("|{0}\t\t|\t {1} |",name,price);
+		Console.WriteLine("|----------------------------|");
+		Console.Write("\nDo you Want To Buy [y/n] : ");
+		char ny = char.Parse(Console.ReadLine());
 		
-		static void Patek_fun(){
-			Patek_quant++;
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
-			Console.WriteLine("|\t\t\t   Welcome to SK Patek_Philippe Watches :- \t\t\t       |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
-			Console.WriteLine("|Quantity   |\t\t\t   Model\t\t\t\t|\tPrice(INR)     |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
-			Console.WriteLine("|{0}\t    |\tPatek Philippe Grandmaster Chime Ref. 6300A-010	\t|\t260 crore      |",Patek_quant);	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------|");		
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-				Total +=  Patek_price;
-				Total_bill(Patek_quant,Patek_Name,Patek_price);	
-			}else{
-				Patek_quant--;
-				Console.WriteLine("Thanks for visit");	
+		if(ny == 'y' || ny == 'Y'){
+			Bill(name,price);
 			}
-		}
-		
-		static void Omega_fun(){
-			Omega_quant++;
-			Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|\t\t\t\tWelcome to SK Omega Watches :-\t\t\t\t\t\t   |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|Quantity   |\t\t\t     Model\t\t\t   |\t\t  Price(INR)\t\t   |");
-			Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
-			Console.WriteLine("|{0}\t    |\t     	Omega vintage Speedmaster Ref. 2915-1\t   |\t  27,76,64,000($17.75 million)\t   |",Omega_quant);	
-			Console.WriteLine("|----------------------------------------------------------------------------------------------------------|");
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-				Total +=Omega_price;
-				Total_bill(Omega_quant,Omega_Name,Omega_price);
-			}else{
-				Omega_quant--;
-				Console.WriteLine("Thanks for Visit \n");
-			}
-		
-		}
-		
-		static void Titan_fun(){
-			Titan_quant++;
-			Console.WriteLine("|-------------------------------------------------------------------------------------|");
-			Console.WriteLine("|\t\t\tWelcome to SK Titan Watches :-\t\t\t\t      |");
-			Console.WriteLine("|-------------------------------------------------------------------------------------|");
-			Console.WriteLine("| Quantity |\t\tModel\t\t|\t\tPrice(INR)\t\t      |");
-			Console.WriteLine("|-------------------------------------------------------------------------------------|");
-			Console.WriteLine("|    {0}\t   |\t Titan Nebula Jalsa\t|\t4000000 (4.05 million INR)\t      |",Titan_quant);
-			Console.WriteLine("|-------------------------------------------------------------------------------------|");
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-
-				Total += Titan_price;
-				Total_bill(Titan_quant,Titan_Name,Titan_price);
-			}else{
-				Titan_quant--;
-				Console.WriteLine("Thanks for Visit \n");
-			}
-			
-		}
-		
-		static void Casio_fun(){
-			Casio_quant++;
-			Console.WriteLine("|------------------------------------------------------------------------------------|");
-			Console.WriteLine("|\t\t\tWelcome to SK Casio Watches :-\t\t\t\t     |");
-			Console.WriteLine("|------------------------------------------------------------------------------------|");
-			Console.WriteLine("| Quantity\t|\t\tModel\t    	   |\t\tPrice(INR)\t     |");
-			Console.WriteLine("|------------------------------------------------------------------------------------|");
-			Console.WriteLine("|    {0}\t\t|\tCASIO G-SHOCK Men Watc     |\t\t49995\t\t     |",Casio_quant);	
-			Console.WriteLine("|------------------------------------------------------------------------------------|");
-			Console.Write("\nDo you want to Purchase [y/n] : ");
-			buy = char.Parse(Console.ReadLine());
-			if(buy == 'y' || buy == 'Y'){
-
-				Total += Casio_price;
-				Total_bill(Casio_quant,Casio_Name,Casio_price);
-			}else{
-				Casio_quant--;
-				Console.WriteLine("Thanks for Visit \n");
-			}
-			
-		}
-				
-		static void Main(){
-			char yn;
-				
-			do{
-				Console.WriteLine("***** Most Welcome To The Luxury SK Watches :- *****\n");
-				Console.WriteLine("********* SK Watches Menu :- *********\n");			
-				Console.WriteLine("Press [1] for Rolex Watches");
-				Console.WriteLine("Press [2] for Patek Philippe Watches");
-				Console.WriteLine("Press [3] for Omega Watches");
-				Console.WriteLine("Press [4] for Titan Watches");
-				Console.WriteLine("Press [5] for Casio Watches");
-				Console.WriteLine("Press [0] for out to the watch shope\n");
-					
-				Console.Write("Your Choice : ");
-				int choice = int.Parse(Console.ReadLine());
-					
-				switch(choice){
-					case 1:
-						Rolex_fun();
-						if(buy == 'y' || buy == 'Y'){
-							Console.Write("\nDo you want to add more quantity [y/n] : ");
-							ny = char.Parse(Console.ReadLine());
-						}
-						if(ny == 'y' || ny == 'Y')
-							Rolex_fun();
-						break;
-						
-					case 2:
-						Patek_fun();
-						if(buy == 'y' || buy == 'Y'){
-							Console.Write("\nDo you want to add more quantity [y/n] : ");
-							ny = char.Parse(Console.ReadLine());
-						}
-						if(ny == 'y' || ny == 'Y')
-							Patek_fun();	
-						break;
-						
-					case 3:
-						Omega_fun();
-						if(buy == 'y' || buy == 'Y'){
-							Console.Write("\nDo you want to add more quantity [y/n] : ");
-							ny = char.Parse(Console.ReadLine());
-						}
-						if(ny == 'y' || ny == 'Y')
-							Omega_fun();
-						break;
-						
-					case 4:
-						Titan_fun();
-						if(buy == 'y' || buy == 'Y'){
-							Console.Write("\nDo you want to add more quantity [y/n] : ");
-							ny = char.Parse(Console.ReadLine());
-						}
-						if(ny == 'y' || ny == 'Y')
-							Titan_fun();
-						break;
-						
-					case 5:
-						Casio_fun();
-						if(buy == 'y' || buy == 'Y'){
-							Console.Write("\nDo you want to add more quantity [y/n] : ");
-							ny = char.Parse(Console.ReadLine());
-						}
-						if(ny == 'y' || ny == 'Y')
-							Casio_fun();
-						break;
-						
-					case 0:
-						Console.WriteLine("Thanks to visit ");
-									break;
-						
-					default:
-						Console.WriteLine("Please Select Your Option Related Above Menu");
-						break;
-				}
-				Console.Write("Do you want to Continue Press [y/n] : ");
-				yn = char.Parse(Console.ReadLine());
-				Console.Clear();
-			}while(yn == 'y' ||yn == 'Y');
-			Console.WriteLine();
-		}
 	}
+	
+	static void Bill(string name,int price){
+		
+		if(price == 499){
+			Console.Write("\nEnter Quantity Of Your Order : ");
+			Pizza_quantity = int.Parse(Console.ReadLine());
+			total_pizza_price = (Pizza_quantity*price);
+			Console.WriteLine("\t***Your Bill***");
+			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
+			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Pizza_quantity,price,total_pizza_price);
+		}
+		else if(price == 299){
+			Console.Write("\nEnter Quantity Of Your Order : ");
+			Burger_quantity = int.Parse(Console.ReadLine());
+			total_burger_price = (Burger_quantity*price);
+			Console.WriteLine("\t***Your Bill***");
+			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
+			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Burger_quantity,price,total_burger_price);
+		}
+		else if(price == 199){
+			Console.Write("\nEnter Quantity Of Your Order : ");
+			Panipuri_quantity = int.Parse(Console.ReadLine());
+			total_panipuri_price = (Panipuri_quantity*price);
+			Console.WriteLine("\t***Your Bill***");
+			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
+			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Panipuri_quantity,price,total_panipuri_price);
+		}
+		else if(price == 209){
+			Console.Write("\nEnter Quantity Of Your Order : ");
+			Sevpuri_quantity = int.Parse(Console.ReadLine());
+			total_sevpuri_price = (Sevpuri_quantity*price);
+			Console.WriteLine("\t***Your Bill***");
+			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
+			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Sevpuri_quantity,price,total_sevpuri_price);
+		}
+		else{
+			Console.Write("\nEnter Quantity Of Your Order : ");
+			Samosa_quantity = int.Parse(Console.ReadLine());
+			total_samosa_price = (Samosa_quantity*price);
+			Console.WriteLine("\t***Your Bill***");
+			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
+			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Samosa_quantity,price,total_samosa_price);
+		}
+		
+
+	}
+	static void Main(){
+		char yn;
+		do{
+			Console.WriteLine("|------------------------------------------|");
+			Console.WriteLine("|*****Welcome to FSK 7 Stars Fast Food*****|");
+			Console.WriteLine("|------------------------------------------|");
+			Console.WriteLine("|\t*****FSK Fast Food Menu*****\t   |");
+			Console.WriteLine("|------------------------------------------|");
+			Console.WriteLine("|\t[1] Enter for Pizza\t\t   |");
+			Console.WriteLine("|\t[2] Enter for Burger\t\t   |");
+			Console.WriteLine("|\t[3] Enter for Panipuri\t\t   |");
+			Console.WriteLine("|\t[4] Enter for Sevpuri\t\t   |");
+			Console.WriteLine("|\t[5] Enter for Samosa\t\t   |");
+			Console.WriteLine("|\t[0] Enter for  Exit\t\t   |");
+			Console.WriteLine("|------------------------------------------|\n");		
+			
+			Console.Write("Enter Your Choice : ");
+			int choice = int.Parse(Console.ReadLine());
+			
+			switch(choice){
+				case 1:
+					Console.WriteLine("\n   Welcome FSK 7 Stars Pizza");
+					Food_Function("Pizza",Pizza);
+					break;
+				
+				case 2:
+					Console.WriteLine("\n  Welcome FSK 7 Stars Burger");
+					Food_Function("Burger",Burger);
+					break;
+					
+				case 3:
+					Console.WriteLine("\n  Welcome FSK 7 Stars Panipuri");
+					Food_Function("Panipuri",Panipuri);
+					break;
+					
+				case 4:
+					Console.WriteLine("\n  Welcome FSK 7 Stars Sevpuri");
+					Food_Function("Sevpori",Sevpuri);
+					break;
+					
+				case 5:
+					Console.WriteLine("\n  Welcome FSK 7 Stars Samosa");
+					Food_Function("Samosa",Samosa);
+					break;
+					
+				case 0:
+					Console.WriteLine("\n  Thanks For Visit");
+					break;
+					
+				default:
+					Console.WriteLine("   Kindly Chose As Above Menu");
+					break;
+								
+			} 
+			Console.Write("\nDo You Want To Continue [y/n] : ");
+			yn = char.Parse(Console.ReadLine());
+			Console.Clear();
+		}while(yn == 'y' || yn == 'Y');
+		
+		Console.WriteLine("|-----------------------------------------------|");
+		Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
+		Console.WriteLine("|-----------------------------------------------|");	
+		Console.WriteLine("|  Description\t|Quantity\t|Price\t|Total  |");
+		Console.WriteLine("|-----------------------------------------------|");	
+		Console.WriteLine("|Pizza\t\t|{0}\t\t|{1}\t|{2}\t|",Pizza_quantity,Pizza,total_pizza_price);
+		Console.WriteLine("|Burger\t\t|{0}\t\t|{1}\t|{2}\t|",Burger_quantity,Burger,total_burger_price);
+		Console.WriteLine("|Panipuri\t|{0}\t\t|{1}\t|{2}\t|",Panipuri_quantity,Panipuri,total_panipuri_price);
+		Console.WriteLine("|Sevpuri\t|{0}\t\t|{1}\t|{2}\t|",Sevpuri_quantity,Sevpuri,total_sevpuri_price);
+		Console.WriteLine("|Samosa\t\t|{0}\t\t|{1}\t|{2}\t|",Samosa_quantity,Samosa,total_samosa_price);
+		long TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
+		Console.WriteLine("|-----------------------------------------------|");	
+		Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|  "+TOTAL+"\t|");	
+		Console.WriteLine("|-----------------------------------------------|");	
+		Console.ReadLine();
+	}
+}
