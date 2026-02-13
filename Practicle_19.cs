@@ -22,6 +22,7 @@ class SK_Fast_Food{
 	static int Panipuri_total_quantity =0;
 	static int Sevpuri_total_quantity =0;
 	static int Samosa_total_quantity =0;
+	static char payment;
 	
 	static void Food_Function(string name,int price){
 		Console.WriteLine("|-------------------------|");
@@ -60,10 +61,11 @@ class SK_Fast_Food{
 		else if(price == 199){
 			Console.Write("\nEnter Quantity Of Your Order : ");
 			Panipuri_quantity = int.Parse(Console.ReadLine());
+			Panipuri_total_quantity += Panipuri_quantity;
 			total_panipuri_price = (Panipuri_total_quantity*price);
 			Console.WriteLine("\t***Your Bill***");
 			Console.WriteLine("Description\tQuantity\tPrice\tTotal");
-			Console.WriteLine("{0}\t\t{1}\t\t{2}\t{3}",name,Panipuri_total_quantity,price,total_panipuri_price);
+			Console.WriteLine("{0}\t{1}\t\t{2}\t{3}",name,Panipuri_total_quantity,price,total_panipuri_price);
 		}
 		else if(price == 209){
 			Console.Write("\nEnter Quantity Of Your Order : ");
@@ -137,7 +139,7 @@ class SK_Fast_Food{
 					break;
 					
 				case 11:
-					Pay_Bill = true;
+					
 					TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
 					Console.WriteLine("|-----------------------------------------------|");
 					Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
@@ -152,6 +154,12 @@ class SK_Fast_Food{
 					Console.WriteLine("|-----------------------------------------------|");	
 					Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|  "+TOTAL+"\t|");	
 					Console.WriteLine("|-----------------------------------------------|");	
+					if(TOTAL != 0){
+						Console.Write("Do You Want to Pay The Bill [y/n] : ");
+						payment = char.Parse(Console.ReadLine());
+						if(payment == 'y' || payment == 'Y')
+							Pay_Bill = true;
+					}
 					break;
 					
 				default:
@@ -159,6 +167,8 @@ class SK_Fast_Food{
 					break;
 								
 			} 
+			if(Pay_Bill == true)
+				break;
 			Console.Write("\nDo You Want To Continue [y/n] : ");
 			yn = char.Parse(Console.ReadLine());
 			Console.Clear();
@@ -181,6 +191,7 @@ class SK_Fast_Food{
 			Console.WriteLine("|\tTotal Amount Of Bill :-\t\t|  "+TOTAL+"\t|");	
 			Console.WriteLine("|-----------------------------------------------|");	
 		}
+			Console.WriteLine("Thanks For Visit\nComes Again With Your Family");
 			Console.ReadLine();
 	}
 }
