@@ -19,11 +19,11 @@ class SK_Fast_Food{
 	static bool Pay_Bill = false;
 	
 	static void Food_Function(string name,int price){
-		Console.WriteLine("|----------------------------|");
-		Console.WriteLine("|Description\t|\tPrice|");
-		Console.WriteLine("|----------------------------|");
-		Console.WriteLine("|{0}\t\t|\t {1} |",name,price);
-		Console.WriteLine("|----------------------------|");
+		Console.WriteLine("|-------------------------|");
+		Console.WriteLine("|  Description  |  Price  |");
+		Console.WriteLine("|-------------------------|");
+		Console.WriteLine("|  {0}\t|  {1}|",name,price+"    ");
+		Console.WriteLine("|-------------------------|");
 		Console.Write("\nDo you Want To Buy [y/n] : ");
 		char ny = char.Parse(Console.ReadLine());
 		
@@ -90,7 +90,7 @@ class SK_Fast_Food{
 			Console.WriteLine("|\t[3] Enter for Panipuri\t\t   |");
 			Console.WriteLine("|\t[4] Enter for Sevpuri\t\t   |");
 			Console.WriteLine("|\t[5] Enter for Samosa\t\t   |");
-			Console.WriteLine("|\t[11] Enter for Pay Bill\t\t 	  |");
+			Console.WriteLine("|\t[11] Enter for Pay Bill\t\t   |");
 			Console.WriteLine("|\t[0] Enter for  Exit\t\t   |");
 			Console.WriteLine("|------------------------------------------|\n");		
 			
@@ -156,6 +156,7 @@ class SK_Fast_Food{
 		}while(yn == 'y' || yn == 'Y');
 		
 		if(Pay_Bill == false){
+			
 			TOTAL = (total_pizza_price+total_burger_price+total_panipuri_price+total_sevpuri_price+total_samosa_price);
 			Console.WriteLine("|-----------------------------------------------|");
 			Console.WriteLine("|\t\tFinal Amount Of Bill :-\t\t|");
