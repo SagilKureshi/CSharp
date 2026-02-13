@@ -1,5 +1,5 @@
-	using System;
-class FSK_Fast_Food{
+using System;
+class SK_Fast_Food{
 	static int Pizza = 499;
 	static int Burger = 299;
 	static int Panipuri = 199;
@@ -81,9 +81,9 @@ class FSK_Fast_Food{
 		char yn;
 		do{
 			Console.WriteLine("|------------------------------------------|");
-			Console.WriteLine("|*****Welcome to FSK 7 Stars Fast Food*****|");
+			Console.WriteLine("|*****Welcome to SK 7 Stars Fast Food*****|");
 			Console.WriteLine("|------------------------------------------|");
-			Console.WriteLine("|\t*****FSK Fast Food Menu*****\t   |");
+			Console.WriteLine("|\t*****SK Fast Food Menu*****\t   |");
 			Console.WriteLine("|------------------------------------------|");
 			Console.WriteLine("|\t[1] Enter for Pizza\t\t   |");
 			Console.WriteLine("|\t[2] Enter for Burger\t\t   |");
@@ -99,27 +99,27 @@ class FSK_Fast_Food{
 			
 			switch(choice){
 				case 1:
-					Console.WriteLine("\n   Welcome FSK 7 Stars Pizza");
+					Console.WriteLine("\n   Welcome SK 7 Stars Pizza");
 					Food_Function("Pizza",Pizza);
 					break;
 				
 				case 2:
-					Console.WriteLine("\n  Welcome FSK 7 Stars Burger");
+					Console.WriteLine("\n  Welcome SK 7 Stars Burger");
 					Food_Function("Burger",Burger);
 					break;
 					
 				case 3:
-					Console.WriteLine("\n  Welcome FSK 7 Stars Panipuri");
+					Console.WriteLine("\n  Welcome SK 7 Stars Panipuri");
 					Food_Function("Panipuri",Panipuri);
 					break;
 					
 				case 4:
-					Console.WriteLine("\n  Welcome FSK 7 Stars Sevpuri");
+					Console.WriteLine("\n  Welcome SK 7 Stars Sevpuri");
 					Food_Function("Sevpori",Sevpuri);
 					break;
 					
 				case 5:
-					Console.WriteLine("\n  Welcome FSK 7 Stars Samosa");
+					Console.WriteLine("\n  Welcome SK 7 Stars Samosa");
 					Food_Function("Samosa",Samosa);
 					break;
 					
