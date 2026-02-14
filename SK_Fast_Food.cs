@@ -34,12 +34,7 @@ class SK_Fast_Food{
 		Console.WriteLine("|-----------------------------|");
 		Console.WriteLine("|   {0}\t  |    {1}    |",name,price);
 		Console.WriteLine("|-----------------------------|");
-		Console.Write("\nDo you Want To Buy [y/n] : ");
-		char ny = char.Parse(Console.ReadLine());
-		
-		if(ny == 'y' || ny == 'Y'){
-			Bill(name,price);
-			}
+		Bill(name,price);	
 	}
 	
 	static void Bill(string name,int price){
