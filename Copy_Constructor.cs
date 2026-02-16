@@ -2,15 +2,23 @@ using System;
 class Copy_Constructor{
 	static void Main(){
 		SK obj1 = new SK(18);
+		obj1.show();
 		SK obj2 = new SK(obj1);
+		obj2.show();
 		Console.ReadLine();
 	}
 }
 class SK{ // The Default Access Specifier For Any Class Is Internal Which Can Be Use From Same File
+	int s1;
 	public SK(int s){
-		Console.WriteLine("Value of Integer Type S From Obj1 = "+s);
+		s1 = s;
+		Console.WriteLine("Parameterized Constructor ");
 	}
 	public 	SK(SK k){ // Copy Constructor
-		Console.WriteLine("Value of SK Type K From Obj2 = "+k);
+		s1 = k.s1;
+		Console.WriteLine("\nCopy Constructor ");
+	}
+	public void show(){
+		Console.WriteLine("Value of s1 = "+s1);
 	}
 }
