@@ -1,16 +1,10 @@
 using System;
 class No_Name{
-	static void get(SK obj){
-		obj.s = 10;		
-	}
-	static void show(){
-		Console.WriteLine("Value Of SK Class's Data Member S = ",obj.s);
-	}
-	static void Main(){
-		SK obj = new SK();
-		get(obj);
-		show(obj);
-		Console.Write(obj.s);
+	public static void Main(){
+		SK a = new SK();
+		Console.Write("Enter Value of S : ");
+		a.s = int.Parse(Console.ReadLine());
+		Console.WriteLine("Value of S = " + a.s);
 	}
 }
 class SK{
