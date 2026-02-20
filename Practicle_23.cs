@@ -5,8 +5,10 @@ class No_Name{
 		Console.Write("Enter Value of S : ");
 		a.s = int.Parse(Console.ReadLine());
 		Console.WriteLine("Value of S = " + a.s);
+		Console.ReadLine();
 	}
 }
 class SK{
 	public int s;
+
 }	
