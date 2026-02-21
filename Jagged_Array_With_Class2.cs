@@ -25,7 +25,7 @@ public class Child : Parent{
 }
 public class SK{
     public static void Main(){
-        int count = 0;
+        int count = 1;
         Child obj = new Child();
         for(int s = 0; s < obj.SK.Length; s++)
         {
@@ -38,4 +38,5 @@ public class SK{
         }    
         obj.Show_Array();
     }
+
 }
