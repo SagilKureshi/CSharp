@@ -1,29 +1,26 @@
 using System;
-class Grand_Parent{
-    protected int s;
-    public void show_grand_parent(){
-        Console.WriteLine("Value of S in Grand Parent Class: " + s);
-    }
-}
-class Parent : Grand_Parent{
-    public void show_parent(){
-        Console.WriteLine("Value of S in Parent Class: " + s);
+class Parent{
+    protected void disp(){
+        Console.WriteLine("Hello From Disp");
     }
 }
 class Child : Parent{
-    public Child(){
-        s = 99;
+    public void child(){
+        Console.WriteLine("This is Child Class");
+        disp();
     }
-    public void show_child(){
-        Console.WriteLine("Value of S in Child Class: " + s);
+}
+class Sub_Child : Child{
+    public void sub_child(){
+        Console.WriteLine("This is Sub Child Class");
+        disp();
     }
 }
 class SK{
     public static void Main(){
-        Child child_obj = new Child();
-        child_obj.show_grand_parent();
-        child_obj.show_parent();
-        child_obj.show_child();
+        Sub_Child Sub_child_obj = new Sub_Child();
+        Sub_child_obj.child();
+        Sub_child_obj.sub_child();
 
     }
 }
