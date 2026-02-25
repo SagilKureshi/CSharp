@@ -40,9 +40,11 @@ class SK
 {
     public static void Main()
     {
+        B b = new B();
         E e = new E();
         D d = new D();
         Console.ReadLine();
     }
 
 }
+
