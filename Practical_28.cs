@@ -15,13 +15,6 @@ class B : A
         Console.WriteLine("SK in Child B : " + SK);
     }
 }
-class D : B
-{
-    public D()
-    {
-        Console.WriteLine("SK in Sub Child D : " + SK);
-    }
-}
 class C : A
 {
     public C()
@@ -29,12 +22,27 @@ class C : A
         Console.WriteLine("SK in Child C : " + SK);
     }
 }
+class E : C
+{
+    public E()
+    {
+        Console.WriteLine("SK in Sub Child E : " + SK);
+    }
+}
+class D : A
+{
+    public D()
+    {
+        Console.WriteLine("SK in Child D : " + SK);
+    }
+}
 class SK
 {
     public static void Main()
     {
+        E e = new E();
         D d = new D();
-        C c = new C();
         Console.ReadLine();
     }
+
 }
