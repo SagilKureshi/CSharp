@@ -1,26 +1,48 @@
+//Hybrid Inheritance
 using System;
-class Parent{
-    protected int sk = 10;
-}
-class Child1 : Parent{
-    public Child1(){
-        Console.WriteLine("SK in Child 1 : " + sk);
+class A
+{
+    protected int SK = 10;
+    public A()
+    {
+        Console.WriteLine("SK in Parent A : " + SK);
     }
 }
-class Sub_Child : Child1{
-    public Sub_Child(){
-        Console.WriteLine("SK in Sub Child : " + sk);
+class B : A
+{
+    public B()
+    {
+        Console.WriteLine("SK in Child B : " + SK);
     }
 }
-class Child2 : Parent{
-    public Child2(){
-        Console.WriteLine("SK in Child 2 : " + sk);
+class C : A
+{
+    public C()
+    {
+        Console.WriteLine("SK in Child C : " + SK);
     }
 }
-class SK{
-    public static void Main(){
-        Sub_Child sc = new Sub_Child();
-        Child2 c2 = new Child2();
+class E : C
+{
+    public E()
+    {
+        Console.WriteLine("SK in Sub Child E : " + SK);
+    }
+}
+class D : A
+{
+    public D()
+    {
+        Console.WriteLine("SK in Child D : " + SK);
+    }
+}
+class SK
+{
+    public static void Main()
+    {
+        E e = new E();
+        D d = new D();
         Console.ReadLine();
     }
+
 }
