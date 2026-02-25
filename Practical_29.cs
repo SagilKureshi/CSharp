@@ -19,8 +19,9 @@ class SK{
         obj.fun();
         obj.fun(10);
         obj.fun(10.5);
-        obj.fun(10, 20);
+        obj.fun("Sagil");
         Console.ReadLine();
     }
 
 }
+
