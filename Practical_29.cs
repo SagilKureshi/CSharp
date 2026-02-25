@@ -7,10 +7,10 @@ class Method_OverLoading{
         Console.WriteLine("Method with one Integer parameter a = " + a);
     }
     public void fun(double d){
-        Console.WriteLine("Method with one Double parameter a = " + d);
+        Console.WriteLine("Method with one Double parameter d = " + d);
     }
-    public void fun(int a, int b){
-        Console.WriteLine("Method with two Integer parameters a = " + a + " and b = " + b);
+    public void fun(string s){
+        Console.WriteLine("Method with one String parameters s = " + s);
     }
 }
 class SK{
@@ -22,4 +22,5 @@ class SK{
         obj.fun(10, 20);
         Console.ReadLine();
     }
+
 }
