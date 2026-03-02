@@ -37,4 +37,5 @@ class Hierarchical_Interface_Inheritance{
         obj2.child2_interface_fun();
         Console.ReadLine();
     }
+
 }
