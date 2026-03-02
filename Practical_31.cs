@@ -2,7 +2,7 @@ using System;
 public class SK{
     public void fun(ref int a,ref int b){
         a += 10;
-        b += 20;
+        b -= 20;
     }
 }
 public class Reference{
@@ -16,4 +16,5 @@ public class Reference{
         Console.WriteLine("S = {0}   K = {1} ",s,k);        
         Console.ReadLine();
     }
+
 }
