@@ -14,31 +14,33 @@ class SK{
         get{
             return name;
         }
-        public void assign(){
-            Console.WriteLine("Enter Your Name : ");
-            name = Console.ReadLine();
-        }
     }
     public string Property_3 // Write Only Property
     {
         set{
             name = value;
         }
-        public void show(){
-            Console.WriteLine("Your Name Is : " + name);
-        }
+    }
+    public void assign(){
+        Console.Write("Enter Your Name : ");
+        name = Console.ReadLine();
+    }
+    public void show(){
+        Console.WriteLine("Your Name Is : " + name);
     }
 }
 class Properties{
     public static void Main(){
         SK obj = new SK();
+        Console.WriteLine("Read & Write Both Properties :- ");
         Console.Write("Enter Your name :- ");
         obj.Property_1 = Console.ReadLine();
-        Console.Write("Your name is :- ");
-        Console.WriteLine(obj.Property_1);
-        obj2.assign();
-        obj2.Property_2;
-        Console.WriteLine("Enter Your Name : ");
+        Console.WriteLine("Your name is :- " + obj.Property_1);
+        Console.WriteLine("\nRead Only Property :- ");
+        obj.assign();
+        Console.WriteLine("Your Name Is : " + obj.Property_2);
+        Console.WriteLine("\nWrite Only Property :- ");
+        Console.Write("Enter Your Name : ");
         obj.Property_3 = Console.ReadLine();
         obj.show();
         Console.ReadLine();
