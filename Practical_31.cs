@@ -1,8 +1,8 @@
 using System;
 public class SK{
-    public void fun(ref int a,ref int b){
-        a += 10;
-        b -= 10;
+    public void fun(ref int ad ,ref int b){
+        ad += 10;
+        sub -= 10;
     }
 }
 public class Reference{
@@ -18,4 +18,5 @@ public class Reference{
     }
 
 }
+
 
