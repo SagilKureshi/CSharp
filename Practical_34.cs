@@ -21,8 +21,8 @@ class Indexer{
         obj[1] = 20;
         obj[2] = -18;
         Console.WriteLine("SK[0] = " + obj[0]);
-        Console.WriteLine("SK[0] = " + obj[1]);
-        Console.WriteLine("SK[0] = " + obj[2]);
+        Console.WriteLine("SK[1] = " + obj[1]);
+        Console.WriteLine("SK[2] = " + obj[2]);
         Console.ReadLine();
     }
 }
