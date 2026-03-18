@@ -1,5 +1,5 @@
 using System;
-        public delegate void Square_Cube(int s,int k);
+        public delegate void Square_Cube(int s);
 
 class SK
 {
@@ -17,15 +17,11 @@ class Delegate
     public static void Main()
     {
         SK obj = new SK();
-        Square sq = new Square(obj.square);
-        Cube c = new Cube(obj.cube);
-        Console.Write("Enter Value of S :- ");
+        Square_Cube sq = new Square_Cube(obj.square);
+        Console.Write("Enter Value a Value :- ");
         int s1 = int.Parse(Console.ReadLine());
-        Console.Write("Enter Value of K :- ");
-        int s2 = int.Parse(Console.ReadLine());
-        s(s1,s2);
+        sq+=obj.cube;
         sq(s1);
-        c(s2);
         Console.ReadLine();
     }
 }
